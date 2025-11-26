@@ -32,11 +32,20 @@
 - FastAPI : 예측 결과 API 제공
 
 ### 폴더 구조
-retail_datapipeline
-|___ purchases_xlsx(매입 데이터)
-|___ py_script
-.gitignore
-README.md
+retail_datapipeline                                           
+|___ purchases_xlsx(매입 데이터)          
+|___ py_script           
+.gitignore          
+README.md              
 
 ### 핵심 흐름
 날씨/엑셀 > NiFi > MariaDB(raw) > Python전처리 > MariaDB(feature) > NiFi > Kafka > Python 모델(Expectation Node) > MongoDB > FastAPI
+
+### 데이터베이스
+MariaDB     
+[데이터베이스] RETAIL_DB
+[테이블]
+WEATHER : (REGION,DATE) : PRIMARY KEY, DATE : DATE, REGION: VARCHAR(20), TEMP : FLOAT, PRECIPITATION : FLOAT
+PURCHASES_RAW
+PURCHASES_FEATURE
+
